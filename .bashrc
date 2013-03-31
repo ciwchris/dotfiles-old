@@ -102,8 +102,8 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-export JAVA_HOME=$HOME/Programs/jdk
-export PATH=$PATH:$JAVA_HOME/bin:$HOME/Programs/intellij/bin:$HOME/Programs/android/tools:$HOME/Programs/android/platform-tools
+#export JAVA_HOME=$HOME/Programs/jdk
+#export PATH=$PATH:$JAVA_HOME/bin:$HOME/Programs/intellij/bin:$HOME/Programs/android/tools:$HOME/Programs/android/platform-tools
 
 set -o vi
 
@@ -114,6 +114,6 @@ set -o vi
 alias ij='adb -d install -r $HOME/IdeaProjects/JeansDay/out/production/JeansDay/JeansDay.apk'
 
 # Run git achievements
-export PATH="$PATH:$HOME/git/git-achievements"
-alias git="git-achievements"
+#export PATH="$PATH:$HOME/git/git-achievements"
+#alias git="git-achievements"
 

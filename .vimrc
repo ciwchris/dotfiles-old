@@ -5,12 +5,50 @@
 
 " Preamble ---------------------------------------------------------------- {{{
 set nocompatible
-call pathogen#infect()
+"call pathogen#infect()
 filetype plugin indent on
 filetype indent on
 "
 " }}}
+" Vundle ---------------------------------------------------------------- {{{
+" Required for Vundle to work
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+
+"JavaScript syntax checkers
+"Bundle 'scrooloose/syntastic'
+"Bundle 'hallettj/jslint.vim'
+Bundle 'pangloss/vim-javascript'
+" Bundle 'Valloric/YouCompleteMe'
+Bundle 'majutsushi/tagbar'
+Bundle 'msanders/snipmate.vim'
+
+" LaTex Plugins
+Bundle 'LaTeX-Box-Team/LaTeX-Box'
+
+" Misc Plugins
+Bundle 'vim-scripts/mru.vim'
+"Bundle 'godlygeek/tabular'
+"Bundle 'mattn/gist-vim'
+"Bundle 'tpope/vim-markdown'
+"Bundle 'kien/ctrlp.vim'
+"Bundle 'mbbill/undotree'
+
+"merge/diff tool
+Bundle 'sjl/splice.vim' 
+
+" Clojure
+"Bundle 'vim-scripts/VimClojure'
+"Bundle 'vim-scripts/paredit.vim'
+"Bundle 'jpalardy/vim-slime'
+
+"
+" }}}
 " Basic options ----------------------------------------------------------- {{{
+
+" Clear all autocmds so they won't get loaded twice. This needs to be up top!
+autocmd!
 
 " Set to auto read when a file is changed from the outside
 " set autoread
@@ -48,9 +86,9 @@ set shiftwidth=4		" 4 characters for indenting
 set showmatch			" showmatch: Show the matching bracket for the last ')'?
 
 set nowrap				" don't wrap by default
-syn on
 set completeopt=menu,longest,preview
 set confirm
+syn on
 
 colorscheme slate
 "Invisible character colors
@@ -63,10 +101,9 @@ highlight SpecialKey guifg=#4a4a59
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
 let mapleader = ","
+let maplocalleader = ","
 let g:mapleader = ","
 
-" Clear all autocmds so they won't get loaded twice
-autocmd!
 
 " set default font size (for plugin fontsize)
 set guifont=Mono\ 10
@@ -81,16 +118,19 @@ augroup filetype_vim
 augroup END
 
 " Fast saving
-nmap <leader>w :w!<cr>
+nnoremap <leader>w :w!<cr>
 
 " Fast unloading buffer
-nnoremap <leader>d :bd!<cr>
+"nnoremap <leader>d :bd!<cr>
 
 " Fast editing of the .vimrc
 nnoremap <leader>ev :e! $MYVIMRC<cr>
 
 " When vimrc is edited, reload it
-autocmd BufWritePost .vimrc source $MYVIMRC
+augroup write_vimrc
+    autocmd!
+	autocmd BufWritePost .vimrc source $MYVIMRC
+augroup END
 
 " When pressing <leader>cd switch to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>
@@ -107,66 +147,69 @@ map <leader>sp [s
 map <leader>sa zg
 map <leader>s? z=
 
-"Markdown to HTML  
+""""""" Markdown to HTML  
 nmap <leader>md :%!~/Scripts/Markdown.pl --html4tags <cr> 
 
 
-""""""""""""""""""""""""""""""
-" => Fuzzy finder
-""""""""""""""""""""""""""""""
-try
-    call fuf#defineLaunchCommand('FufCWD', 'file', 'fnamemodify(getcwd(), ''%:p:h'')')
-    map <leader>t :FufCWD **/<CR>
-catch
-endtry
-
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Convient Mappings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 inoremap <a-j> <down>
 inoremap <a-k> <up>
 nnoremap <space> <c-f>
+" up and down for screen not file line
+nnoremap j gj
+nnoremap k gk
 
-" Remap omni-completion to CTRL+SPACE
-inoremap <c-space> <c-x><c-o>
+""""""" Remap omni-completion to CTRL+SPACE
+"inoremap <c-space> <c-x><c-o>
 
-" Turn off toolbar
+""""""" Turn off toolbar
 set guioptions-=T
 " Use clipboard when maipulating text in visual mode
 " set guioptions+=a
 " set guioptions+=A
 
-" remove serach highlighting with escape
- ":nnoremap <esc> :noh<return><esc>
+""""""" Remove serach highlighting with escape
+:nnoremap <esc> :noh<return><esc>
 
-" viminfo to turn off saving global marks across sessions
- set viminfo='100,f0
+""""""" viminfo to turn off saving global marks across sessions
+set viminfo='100,f0
 
-" do not use swap or backup files
+""""""" do not use swap or backup files
 set nobackup
 set nowritebackup
 set noswapfile
 
-" up and down for screen not file line
-nnoremap j gj
-nnoremap k gk
 
-" show chars for tab and end of line
+""""""" show chars for tab and end of line
 set list
 set listchars=tab:▸\ ,eol:¬
 
 
-" copy working directory of current buffer
- :nmap ,p :let @p=substitute(expand("%:p:h"), "/", "\\", "g")<CR>
+""""""" copy working directory of current buffer
+" :nmap ,p :let @p=substitute(expand("%:p:h"), "/", "\\", "g")<CR>
 
 
 " Conque - so we can run vim inside of conque
 let g:ConqueTerm_EscKey = '<C-d>'
 let g:ConqueTerm_CWInsert = 0
 
-" clojure - slime with vim (not slimv)
-let g:slime_target = "tmux"
+""""""" clojure - slime with vim (not slimv)
+" let g:slime_target = "tmux"
+" Settings for the VimClojure plugin
+"let vimclojure#FuzzyIndent=1
+"let vimclojure#HighlightBuiltins=1
+"let vimclojure#HighlightContrib=1
+"let vimclojure#DynamicHighlighting=1
+"let vimclojure#ParenRainbow=1
+"let vimclojure#WantNailgun=1
+"let vimclojure#NailgunClient = $HOME . "/.bin/ng"
+"let g:paredit_mode = 1
 
 " TwitVim
-let twitvim_browser_cmd = 'firefox'
-let twitvim_api_root = "https://api.twitter.com/1"
+"let twitvim_browser_cmd = 'firefox'
+"let twitvim_api_root = "https://api.twitter.com/1"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " OPEN FILES IN DIRECTORY OF CURRENT FILE
@@ -196,4 +239,5 @@ iabbrev their their<esc>b<leader>heea
 iabbrev attend attend<esc>b<leader>heea
 iabbrev our our<esc>b<leader>heea
 " }}}
+"
 
