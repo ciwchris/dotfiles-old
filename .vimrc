@@ -208,8 +208,8 @@ map <leader>v :view %%
 
 
 " Ultinsnips
-let g:UltiSnipsExpandTrigger="<Enter>"
-let g:UltiSnipsListSnippets="<C-Enter>"
+let g:UltiSnipsExpandTrigger="<C-t>"
+"let g:UltiSnipsListSnippets="<C-Enter>"
 
 " Conque - so we can run vim inside of conque
 let g:ConqueTerm_EscKey = '<C-d>'
@@ -233,8 +233,9 @@ let g:html_ident_script1 = "inc"
 let g:html_ident_style1 = "inc"
 
 " Theme
+let s:background_color=readfile($HOME."/.bin/color-mode/current-color-mode","",1)
 syntax enable
-set background=dark
+let &background=s:background_color[0]
 colorscheme solarized
 
 " TwitVim

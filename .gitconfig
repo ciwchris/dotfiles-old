@@ -1,11 +1,6 @@
 [user]
 	name = Christopher Lopes
 	email = christopher.lopes@gmail.com
-[github]
-	user = ciwchris
-	token = e2750f14b8428ec6421b93dde4f601c6
-[achievement]
-	upload = true
 [alias]
 	unstage = reset HEAD --
 	last = log -1 HEAD
