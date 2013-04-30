@@ -1,39 +1,35 @@
 " .vimrc
 " Author: Christopher Lopes <christopher.lopes@gmail.com>
-" Author: Steve Losh <steve@stevelosh.com>
 
 
 " Preamble ---------------------------------------------------------------- {{{
 set nocompatible
-"call pathogen#infect()
-filetype plugin indent on
-filetype indent on
-"
-" }}}
-" Vundle ---------------------------------------------------------------- {{{
-" Required for Vundle to work
+filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-Bundle 'gmarik/vundle'
 
-"JavaScript syntax checkers
-"Bundle 'scrooloose/syntastic'
-"Bundle 'hallettj/jslint.vim'
+Bundle 'gmarik/vundle' 
+
+" Theme
+Bundle 'altercation/vim-colors-solarized'
+
+Bundle 'https://github.com/Valloric/YouCompleteMe.git'
+Bundle 'SirVer/ultisnips'
+Bundle 'tpope/vim-ragtag'
+
+" Improved JavaScript indentation
 Bundle 'pangloss/vim-javascript'
-" Bundle 'Valloric/YouCompleteMe'
+Bundle 'vim-scripts/indenthtml.vim'
+
+" :Ack [options] {pattern} [{directory}]
+Bundle 'https://github.com/mileszs/ack.vim.git'
+" :TagbarToggle
 Bundle 'majutsushi/tagbar'
-Bundle 'msanders/snipmate.vim'
-
-" LaTex Plugins
-Bundle 'LaTeX-Box-Team/LaTeX-Box'
-
-" Misc Plugins
+"Bundle 'msanders/snipmate.vim'
 Bundle 'vim-scripts/mru.vim'
-"Bundle 'godlygeek/tabular'
-"Bundle 'mattn/gist-vim'
-"Bundle 'tpope/vim-markdown'
-"Bundle 'kien/ctrlp.vim'
-"Bundle 'mbbill/undotree'
+
+" Lightweight Toolbox for LaTex
+"Bundle 'LaTex-Box-Team/LaTex-Box'
 
 "merge/diff tool
 Bundle 'sjl/splice.vim' 
@@ -43,8 +39,10 @@ Bundle 'sjl/splice.vim'
 "Bundle 'vim-scripts/paredit.vim'
 "Bundle 'jpalardy/vim-slime'
 
-"
+filetype plugin indent on
+
 " }}}
+
 " Basic options ----------------------------------------------------------- {{{
 
 " Clear all autocmds so they won't get loaded twice. This needs to be up top!
@@ -90,7 +88,6 @@ set completeopt=menu,longest,preview
 set confirm
 syn on
 
-colorscheme slate
 "Invisible character colors
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
@@ -171,7 +168,8 @@ set guioptions-=T
 " set guioptions+=A
 
 """"""" Remove serach highlighting with escape
-:nnoremap <esc> :noh<return><esc>
+"causing issues!!!!!!!
+"nnoremap <esc> :noh<return><esc>
 
 """"""" viminfo to turn off saving global marks across sessions
 set viminfo='100,f0
@@ -183,13 +181,35 @@ set noswapfile
 
 
 """"""" show chars for tab and end of line
-set list
-set listchars=tab:▸\ ,eol:¬
+" causing issues !!!!
+"set list
+"set listchars=tab:▸\ ,eol:¬
 
 
 """"""" copy working directory of current buffer
 " :nmap ,p :let @p=substitute(expand("%:p:h"), "/", "\\", "g")<CR>
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" OPEN FILES IN DIRECTORY OF CURRENT FILE
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+map <leader>e :edit %%
+map <leader>v :view %%
+
+
+" }}}
+
+" Plugin mappings {{{
+
+" YouCompleteMe
+"let g:ycm_key_list_previous_completion=['<Up>']
+"let g:ycm_key_list_select_completion=['<Down>','<Enter>']
+
+
+" Ultinsnips
+let g:UltiSnipsExpandTrigger="<Enter>"
+let g:UltiSnipsListSnippets="<C-Enter>"
 
 " Conque - so we can run vim inside of conque
 let g:ConqueTerm_EscKey = '<C-d>'
@@ -207,19 +227,22 @@ let g:ConqueTerm_CWInsert = 0
 "let vimclojure#NailgunClient = $HOME . "/.bin/ng"
 "let g:paredit_mode = 1
 
+" vim-script html indentation
+let g:html_ident_inctags = "html,body,head,tbody"
+let g:html_ident_script1 = "inc"
+let g:html_ident_style1 = "inc"
+
+" Theme
+syntax enable
+set background=dark
+colorscheme solarized
+
 " TwitVim
 "let twitvim_browser_cmd = 'firefox'
 "let twitvim_api_root = "https://api.twitter.com/1"
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" OPEN FILES IN DIRECTORY OF CURRENT FILE
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-cnoremap %% <C-R>=expand('%:h').'/'<cr>
-map <leader>e :edit %%
-map <leader>v :view %%
-
-
 " }}}
+
 " Highlight word {{{
 highlight InterestingWord1 guibg=green guifg=white
 highlight InterestingWord2 guibg=blue guifg=white
@@ -239,5 +262,4 @@ iabbrev their their<esc>b<leader>heea
 iabbrev attend attend<esc>b<leader>heea
 iabbrev our our<esc>b<leader>heea
 " }}}
-"
 
