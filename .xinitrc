@@ -18,6 +18,7 @@ setxkbmap -layout dvorak
 
 # remap the caps lock key
 [[ -f $HOME/.Xmodmap ]] && xmodmap $HOME/.Xmodmap
+xbindkeys &
 
 # load Xdefaults/Xresources
 # Xdefaults is deprecated and somehow Xresources

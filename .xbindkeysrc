@@ -1,0 +1,7 @@
+# https://wiki.archlinux.org/index.php/Lenovo_ThinkPad_T400#Multimedia_Keys
+
+"amixer set Master 2dB+ unmute"
+	XF86AudioRaiseVolume
+
+"amixer set Master 2dB- unmute"
+  XF86AudioLowerVolume
