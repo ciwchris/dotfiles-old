@@ -34,8 +34,8 @@ ZSH_THEME="blinks"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
-# Other plugins to try (archlinux bundler gem lein mvn npm vi-mode)
-plugins=(git git-extras last-working-dir)
+# Other plugins to try (archlinux bundler gem lein mvn npm vi-mode last-working-dir)
+plugins=(git git-extras)
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/Programs/Git/nvm/nvm.sh
@@ -45,3 +45,5 @@ PATH+=":$(ruby -rubygems -e "puts Gem.user_dir")/bin"
 PATH+=":$HOME/.bin"
 
 export GEM_HOME=$(ruby -rubygems -e "puts Gem.user_dir")
+export VISUAL=vim
+export EDITOR=vim
