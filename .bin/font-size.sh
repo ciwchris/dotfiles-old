@@ -1,11 +1,15 @@
 #!/bin/sh
 
-if [ -z $1 ]; then
-	[[ -f $HOME/.Xstandardfont ]] && xrdb -merge $HOME/.Xstandardfont
-elif [[ "$1" =~ ^[0-9]+$ ]]; then
-	echo "
-! urxvt
-URxvt*font: xft:terminus12:size=$1:antialias=true" > $HOME/.Xcustomfont
+size=11 # Default font size
 
-	xrdb -merge $HOME/.Xcustomfont
+# Use new font size if one was passed in
+if [[ "$1" =~ ^[0-9]+$ ]]; then
+	size=$1
 fi
+
+# Write out the new font settings
+echo "
+! urxvt
+URxvt*font: xft:terminus:size=$size:antialias=true" > $HOME/.Xfont
+
+xrdb -merge $HOME/.Xfont

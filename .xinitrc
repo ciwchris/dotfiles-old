@@ -24,7 +24,7 @@ xbindkeys &
 # Xdefaults is deprecated and somehow Xresources
 # isn't always loaded so we will load our own here
 [[ -f $HOME/.Xpersonal ]] && xrdb -merge $HOME/.Xpersonal
-[[ -f $HOME/.Xstandardfont ]] && xrdb -merge $HOME/.Xstandardfont
+[[ -f $HOME/.Xfont ]] && xrdb -merge $HOME/.Xfont
 [[ -f $HOME/.bin/color-mode/set-color-mode.sh ]] && source $HOME/.bin/color-mode/set-color-mode.sh
 
 # Start notification service for screen lock notification
