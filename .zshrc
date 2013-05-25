@@ -9,8 +9,16 @@ ZSH_THEME="blinks"
 [[ -f $HOME/.bin/color-mode/current-color-mode ]] && SOLARIZED_THEME=$(<$HOME/.bin/color-mode/current-color-mode)
 
 # Example aliases
+alias as="$HOME/programs/android-studio/bin/studio.sh"
+alias disk-usage="du */ -smx | sort -n"
+alias screencastRecord="$HOME/.bin/video_recording.sh -s"
+alias webcamRecord="$HOME/.bin/video_recording.sh -w"
+alias youtubeConvert="$HOME/.bin/video_recording.sh -y"
+alias webmConvert="$HOME/.bin/video_recording.sh -c"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -38,11 +46,12 @@ ZSH_THEME="blinks"
 plugins=(git git-extras)
 
 source $ZSH/oh-my-zsh.sh
-source $HOME/Programs/Git/nvm/nvm.sh
+source $HOME/programs/git/nvm/nvm.sh
 
 # Customize to your needs...
 PATH+=":$(ruby -rubygems -e "puts Gem.user_dir")/bin"
 PATH+=":$HOME/.bin"
+PATH+=":$HOME/programs/gradle-1.6/bin"
 
 export GEM_HOME=$(ruby -rubygems -e "puts Gem.user_dir")
 export VISUAL=vim
