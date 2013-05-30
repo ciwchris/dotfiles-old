@@ -5,8 +5,8 @@
   exit 0
 }
 
-essid=`/usr/sbin/iwconfig wlp3s0 | awk -F '"' '/ESSID/ {print $2}'`
-stngth=`/usr/sbin/iwconfig wlp3s0 | awk -F '=' '/Quality/ {print $2}' | cut -d '/' -f 1`
+essid=`/usr/bin/iwconfig wlp3s0 | awk -F '"' '/ESSID/ {print $2}'`
+stngth=`/usr/bin/iwconfig wlp3s0 | awk -F '=' '/Quality/ {print $2}' | cut -d '/' -f 1`
 
 battery=`acpi -b | awk -F ',' '/Discharging/ {print $2}'`
 if [ ${battery%?} -lt 5 ]; then
