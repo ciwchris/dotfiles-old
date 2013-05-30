@@ -18,6 +18,11 @@ alias webmConvert="$HOME/.bin/video_recording.sh -c"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias monitorOff="sleep 1; xset dpms force off"
+alias lock="xautolock -locknow"
+alias restart="shutdown -r now"
+alias shutdown="shutdown -P now"
+alias ack="ack -l"
 
 
 # Set to this to use case-sensitive completion
