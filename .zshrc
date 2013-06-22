@@ -10,7 +10,7 @@ ZSH_THEME="blinks"
 
 # Example aliases
 alias as="$HOME/programs/android-studio/bin/studio.sh"
-alias disk-usage="du */ -smx | sort -n"
+alias disk-usage="sudo du */ -smx | sort -n"
 alias screencastRecord="$HOME/.bin/video_recording.sh -s"
 alias webcamRecord="$HOME/.bin/video_recording.sh -w"
 alias youtubeConvert="$HOME/.bin/video_recording.sh -y"
@@ -61,3 +61,6 @@ PATH+=":$HOME/programs/gradle-1.6/bin"
 export GEM_HOME=$(ruby -rubygems -e "puts Gem.user_dir")
 export VISUAL=vim
 export EDITOR=vim
+
+# Use keychain to control ssh-agent and ssh-add across multiple login sessions
+alias ssh='eval $(/usr/bin/keychain --eval --agents ssh -Q --quiet ~/.ssh/id_rsa) && ssh'
