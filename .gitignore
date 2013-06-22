@@ -1,3 +1,7 @@
 # Ignore everything in .xmonad/ but the source file
 .xmonad/*
 !.xmonad/xmonad.hs
+
+# Ignore irrelevant items in .bin
+.bin/color-mode/current-color-mode
+.bin/phantomjs
