@@ -172,8 +172,8 @@ set guioptions-=T
 " set guioptions+=A
 
 """"""" Remove serach highlighting with escape
-"causing issues!!!!!!!
-nnoremap <esc> :noh<return><esc>
+" ISSUE! When using this after vim starts up we're left in insert mode
+"nnoremap <esc> :noh<return><esc>
 
 """"""" viminfo to turn off saving global marks across sessions
 set viminfo='100,f0
