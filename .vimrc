@@ -15,7 +15,10 @@ Bundle 'altercation/vim-colors-solarized'
 
 Bundle 'https://github.com/Valloric/YouCompleteMe.git'
 Bundle 'SirVer/ultisnips'
-Bundle 'tpope/vim-ragtag'
+"Bundle 'tpope/vim-ragtag'
+Bundle 'vim-scripts/bufexplorer.zip'
+Bundle 'kien/ctrlp.vim'
+Bundle 'tpope/vim-commentary'
 
 " Improved JavaScript indentation
 Bundle 'pangloss/vim-javascript'
@@ -24,7 +27,7 @@ Bundle 'vim-scripts/indenthtml.vim'
 " :Ack [options] {pattern} [{directory}]
 Bundle 'https://github.com/mileszs/ack.vim.git'
 " :TagbarToggle
-Bundle 'majutsushi/tagbar'
+"Bundle 'majutsushi/tagbar'
 "Bundle 'msanders/snipmate.vim'
 Bundle 'vim-scripts/mru.vim'
 
@@ -71,7 +74,8 @@ set wildmode=list:longest,full	" tab complete to longest string
 set visualbell
 set ttyfast
 
-set nonumber				" line numbers off
+"set nonumber				" line numbers off
+"set relativenumber
 set cindent
 set autoindent
 set smartindent
@@ -169,7 +173,7 @@ set guioptions-=T
 
 """"""" Remove serach highlighting with escape
 "causing issues!!!!!!!
-"nnoremap <esc> :noh<return><esc>
+nnoremap <esc> :noh<return><esc>
 
 """"""" viminfo to turn off saving global marks across sessions
 set viminfo='100,f0
@@ -201,6 +205,11 @@ map <leader>v :view %%
 " }}}
 
 " Plugin mappings {{{
+
+" Ctrlp
+let g:ctrlp_custom_ignore = {
+			\ 'dir': '\v[\/]node_modules$',
+			\}
 
 " YouCompleteMe
 "let g:ycm_key_list_previous_completion=['<Up>']
@@ -264,3 +273,21 @@ iabbrev attend attend<esc>b<leader>heea
 iabbrev our our<esc>b<leader>heea
 " }}}
 
+" Custom functions {{{
+
+" function! NumberToggle()
+" 	if(&relativenumber == 1)
+" 		set number
+" 	else
+" 		set relativenumber
+" 	endif
+" endfunc
+" nnoremap <C-n> :call NumberToggle()<cr>
+" augroup filetype_vim
+" 	autocmd FocusLost * :set number
+" 	autocmd FocusGained * :set relativenumber
+" 	autocmd InsertEnter * :set nonumber
+" 	autocmd InsertLeave * :set relativenumber
+" augroup END
+
+" }}}
