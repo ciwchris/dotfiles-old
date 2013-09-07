@@ -45,5 +45,8 @@ xautolock -time 30 -locker slimlock  -notify 8 -notifier "zenity --notification 
 # Start dropbox
 [[ -f $HOME/.dropbox-dist/dropbox ]] && $HOME/.dropbox-dist/dropbox /newerversion &
 
-# start xmonad
+# Start f.lux to control screen color, remove blue in the evenings
+xflux -z 99201 &
+
+# start Window Manager
 exec xmonad
