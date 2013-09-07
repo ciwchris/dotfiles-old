@@ -1,3 +1,3 @@
 
 ! urxvt
-URxvt*font: xft:terminus:size=11:antialias=true
+URxvt*font: xft:terminus:size=16:antialias=true
