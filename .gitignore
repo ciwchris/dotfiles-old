@@ -5,3 +5,7 @@
 # Ignore irrelevant items in .bin
 .bin/color-mode/current-color-mode
 .bin/phantomjs
+
+# Ignore irrelevant vim files
+/.vim/tmp
+/.vim/bundle/
