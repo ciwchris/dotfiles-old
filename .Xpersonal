@@ -13,7 +13,8 @@ URxvt*loginShell: true
 Urxvt*secondaryScroll:  true    # Enable Shift-PageUp/Down in screen
 URxvt*saveLines: 5000
 URxvt*termName: rxvt-unicode
-URxvt.perl-ext-common: default,matcher,clipboard,keyboard-select,url-select
+!! Extensions
+URxvt.perl-ext-common: default,matcher,clipboard,keyboard-select,url-select,font-size
 URxvt.keysym.Mod4-Escape: perl:keyboard-select:activate
 URxvt.keysym.Mod4-s: perl:keyboard-select:search
 !!URxvt.keysym.Mod4-u: perl:url-select:search_next
@@ -24,3 +25,9 @@ URxvt.clipboard.pastecmd: xclip -o -selection clipboard
 URxvt.urlLauncher: firefox
 URxvt.matcher.button: 1
 
+!! Change font size dynamically with urxvt-font-size-git
+URxvt.keysym.C-Up:     perl:font-size:increase
+URxvt.keysym.C-Down:   perl:font-size:decrease
+URxvt.keysym.C-S-Up:   perl:font-size:incglobal
+URxvt.keysym.C-S-Down: perl:font-size:decglobal
+!!
