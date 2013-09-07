@@ -188,11 +188,6 @@ set guioptions-=T
 """"""" viminfo to turn off saving global marks across sessions
 set viminfo='100,f0
 
-""""""" do not use swap or backup files
-set nobackup
-set nowritebackup
-set noswapfile
-
 
 """"""" show chars for tab and end of line
 " causing issues !!!!
