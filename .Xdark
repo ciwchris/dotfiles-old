@@ -1,6 +1,7 @@
 #include ".Xcolors"
 
-*background:            S_base03
+!! If URxvt is not specified then vim will try to load the color and error
+URxvt.background:            S_base03
 *foreground:            S_base00
 *fading:                40
 *fadeColor:             S_base03
