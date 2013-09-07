@@ -54,7 +54,6 @@ source $HOME/programs/git/nvm/nvm.sh
 # Customize to your needs...
 PATH+=":$(ruby -rubygems -e "puts Gem.user_dir")/bin"
 PATH+=":$HOME/.bin"
-PATH+=":$HOME/programs/gradle-1.6/bin"
 
 export GEM_HOME=$(ruby -rubygems -e "puts Gem.user_dir")
 export VISUAL=vim
