@@ -71,7 +71,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_p     ), spawn "dmenu_run -i -l 20")
 
     -- launch find files with dmenu and display in vim
-    , ((modm .|. shiftMask, xK_p     ), spawn "urxvt -e vim `find ~/ | dmenu -i -l 20 -p 'file:'`")
+    , ((modm .|. shiftMask, xK_p     ), spawn "urxvt -e ranger")
 
     -- close focused window
     , ((modm .|. shiftMask, xK_c     ), kill)
