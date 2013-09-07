@@ -298,9 +298,6 @@ syntax enable
 let &background=s:background_color[0]
 colorscheme solarized
 
-" TwitVim
-"let twitvim_browser_cmd = 'firefox'
-"let twitvim_api_root = "https://api.twitter.com/1"
 
 " }}}
 
