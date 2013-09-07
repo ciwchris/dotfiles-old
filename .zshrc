@@ -8,15 +8,11 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="blinks"
 [[ -f $HOME/.bin/color-mode/current-color-mode ]] && SOLARIZED_THEME=$(<$HOME/.bin/color-mode/current-color-mode)
 
-# Example aliases
-alias as="$HOME/programs/android-studio/bin/studio.sh"
 alias disk-usage="sudo du */ -smx | sort -n"
 alias screencastRecord="$HOME/.bin/video_recording.sh -s"
 alias webcamRecord="$HOME/.bin/video_recording.sh -w"
 alias youtubeConvert="$HOME/.bin/video_recording.sh -y"
 alias webmConvert="$HOME/.bin/video_recording.sh -c"
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias monitorOff="sleep 1; xset dpms force off"
 alias lock="xautolock -locknow"
