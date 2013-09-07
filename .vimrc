@@ -117,7 +117,7 @@ let g:mapleader = ","
 
 
 " set default font size (for plugin fontsize)
-set guifont=Mono\ 10
+"set guifont=Mono\ 10
 
 
 " change to directory of current file automatically
