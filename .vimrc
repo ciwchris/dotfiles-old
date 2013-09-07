@@ -70,7 +70,7 @@ autocmd!
 set encoding=utf-8
 set history=1000
 set ruler			" show the cursor position all the time
-set cmdheight=1 	"The commandbar height
+"set cmdheight=1 	"The commandbar height
 set showcmd			" display incomplete commands
 " perl/python regex (comment can't appear on line below)
 nnoremap / /\v
