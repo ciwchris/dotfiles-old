@@ -124,8 +124,8 @@ let g:mapleader = ","
 autocmd BufEnter,BufRead,BufNewFile,BufFilePost *     execute ":lcd " . expand("%:p:h")
 " turn on folding using markers
 augroup filetype_vim
-    autocmd!
-    autocmd FileType vim setlocal foldmethod=marker
+	autocmd!
+	autocmd FileType vim setlocal foldmethod=marker
 augroup END
 
 " Fast saving
@@ -139,7 +139,7 @@ nnoremap <leader>ev :e! $MYVIMRC<cr>
 
 " When vimrc is edited, reload it
 augroup write_vimrc
-    autocmd!
+	autocmd!
 	autocmd BufWritePost .vimrc source $MYVIMRC
 augroup END
 
@@ -341,10 +341,10 @@ iabbrev our our<esc>b<leader>heea
 " endfunc
 " nnoremap <C-n> :call NumberToggle()<cr>
 " augroup filetype_vim
-" 	autocmd FocusLost * :set number
-" 	autocmd FocusGained * :set relativenumber
-" 	autocmd InsertEnter * :set nonumber
-" 	autocmd InsertLeave * :set relativenumber
+" autocmd FocusLost * :set number
+" autocmd FocusGained * :set relativenumber
+" autocmd InsertEnter * :set nonumber
+" autocmd InsertLeave * :set relativenumber
 " augroup END
 
 " }}}
