@@ -61,6 +61,7 @@ export EDITOR=vim
 
 # Use keychain to control ssh-agent and ssh-add across multiple login sessions
 alias ssh='eval $(/usr/bin/keychain --eval --agents ssh -Q --quiet ~/.ssh/id_rsa) && ssh'
+
 # Create symbolic links to directory location to jump to the location easily
 # http://jeroenjanssens.com/2013/08/16/quickly-navigate-your-filesystem-from-the-command-line.html
 export MARKPATH=$HOME/.marks
