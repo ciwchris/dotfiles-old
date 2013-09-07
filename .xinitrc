@@ -30,6 +30,12 @@ xbindkeys &
 [[ -f $HOME/.Xfont ]] && xrdb -merge $HOME/.Xfont
 [[ -f $HOME/.bin/color-mode/set-color-mode.sh ]] && source $HOME/.bin/color-mode/set-color-mode.sh
 
+# start xcompmgr so terminals have true transparency
+xcompmgr -c &
+# and now put the background image back
+# a fix for this should be coming in SLiM
+hsetroot -fill $HOME/.config/slim/linux-arch_00391060.png
+
 # Start notification service for screen lock notification
 /usr/lib/notification-daemon-1.0/notification-daemon &
 

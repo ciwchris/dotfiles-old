@@ -1,4 +1,8 @@
 ! urxvt
+!URxvt*.transparent: true
+! URxvt*.shading: 0 to 99 darkens, 101 to 200 lightens
+!URxvt*.shading: 110
+!URxvt.inheritPixmap: true
 URxvt*buffered: true
 URxvt*cursorBlink: true
 URxvt*underlineColor: yellow
