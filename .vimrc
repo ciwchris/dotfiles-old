@@ -12,6 +12,7 @@ Bundle 'gmarik/vundle'
 
 " Theme
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'bling/vim-airline'
 
 Bundle 'https://github.com/Valloric/YouCompleteMe.git'
 Bundle 'SirVer/ultisnips'
@@ -19,6 +20,7 @@ Bundle 'SirVer/ultisnips'
 Bundle 'vim-scripts/bufexplorer.zip'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-fugitive'
 
 " Improved JavaScript indentation
 Bundle 'pangloss/vim-javascript'
@@ -39,8 +41,16 @@ Bundle 'sjl/splice.vim'
 
 " Clojure
 "Bundle 'vim-scripts/VimClojure'
-"Bundle 'vim-scripts/paredit.vim'
+Bundle 'vim-scripts/paredit.vim'
+Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'guns/vim-clojure-static'
+Bundle 'tpope/vim-fireplace'
 "Bundle 'jpalardy/vim-slime'
+
+" CSharp
+Bundle 'tpope/vim-dispatch'
+Bundle 'nosami/Omnisharp'
+
 
 filetype plugin indent on
 
@@ -204,12 +214,56 @@ map <leader>v :view %%
 
 " }}}
 
+" Backups {{{
+
+
+""""""" do not use swap or backup files
+" set nobackup
+" set nowritebackup
+" set noswapfile
+
+
+" From Steve Losh
+set backup                        " enable backups
+set noswapfile                    " it's 2013, Vim.
+
+set undodir=~/.vim/tmp/undo//     " undo files
+set backupdir=~/.vim/tmp/backup// " backups
+set directory=~/.vim/tmp/swap//   " swap files
+
+" Make those folders automatically if they don't already exist.
+if !isdirectory(expand(&undodir))
+	call mkdir(expand(&undodir), "p")
+endif
+if !isdirectory(expand(&backupdir))
+	call mkdir(expand(&backupdir), "p")
+endif
+if !isdirectory(expand(&directory))
+	call mkdir(expand(&directory), "p")
+endif
+
+" }}}
+
 " Plugin mappings {{{
+
+" vim-airline
+set laststatus=2		" always display the status line so vim-airline is always displayed
 
 " Ctrlp
 let g:ctrlp_custom_ignore = {
 			\ 'dir': '\v[\/]node_modules$',
 			\}
+
+" vim-dispatch
+nnoremap <leader>ur :Dispatch<CR>
+augroup vim_dispatch
+	autocmd!
+	autocmd FileType cs let b:dispatch = 'xunit.console.clr4.exe %:p:h/bin/Debug/%:p:h:t.dll'
+augroup END
+
+
+nnoremap <leader>ob :wa!<CR>:OmniSharpBuildAsync<CR>
+nnoremap <leader>oc :w!<CR>:OmniSharpFindSyntaxErrors<CR>
 
 " YouCompleteMe
 "let g:ycm_key_list_previous_completion=['<Up>']
@@ -217,7 +271,10 @@ let g:ctrlp_custom_ignore = {
 
 
 " Ultinsnips
-let g:UltiSnipsExpandTrigger="<C-t>"
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+"let g:UltiSnipsExpandTrigger="<C-t>"
 "let g:UltiSnipsListSnippets="<C-Enter>"
 
 " Conque - so we can run vim inside of conque
