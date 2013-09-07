@@ -17,12 +17,14 @@ URxvt*termName: rxvt-unicode
 URxvt.perl-ext-common: default,matcher,clipboard,keyboard-select,url-select,font-size
 URxvt.keysym.Mod4-Escape: perl:keyboard-select:activate
 URxvt.keysym.Mod4-s: perl:keyboard-select:search
-!!URxvt.keysym.Mod4-u: perl:url-select:search_next
+!URxvt.keysym.Mod4-u: perl:url-select:search_next
 URxvt.keysym.Mod4-c: perl:clipboard:copy
 URxvt.keysym.Mod4-v: perl:clipboard:paste
 URxvt.clipboard.copycmd: xclip -i -selection clipboard
 URxvt.clipboard.pastecmd: xclip -o -selection clipboard
-URxvt.urlLauncher: firefox
+
+!! Make URLs clickable
+URxvt.urlLauncher: /usr/bin/firefox
 URxvt.matcher.button: 1
 
 !! Change font size dynamically with urxvt-font-size-git
