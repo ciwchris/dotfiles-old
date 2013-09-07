@@ -134,6 +134,8 @@ nnoremap <leader>w :w!<cr>
 " Fast unloading buffer
 nnoremap <leader>d :bd!<cr>
 
+" Fast edit single file
+nnoremap <leader>on :on<cr>
 
 " Fast editing of the .vimrc
 nnoremap <leader>ev :e! $MYVIMRC<cr>
