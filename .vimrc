@@ -132,7 +132,8 @@ augroup END
 nnoremap <leader>w :w!<cr>
 
 " Fast unloading buffer
-"nnoremap <leader>d :bd!<cr>
+nnoremap <leader>d :bd!<cr>
+
 
 " Fast editing of the .vimrc
 nnoremap <leader>ev :e! $MYVIMRC<cr>
