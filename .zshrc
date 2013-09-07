@@ -9,6 +9,8 @@ ZSH_THEME="blinks"
 [[ -f $HOME/.bin/color-mode/current-color-mode ]] && SOLARIZED_THEME=$(<$HOME/.bin/color-mode/current-color-mode)
 
 alias disk-usage="sudo du */ -smx | sort -n"
+alias btsync-start="sudo systemctl start btsync@ciwchris"
+alias btsync-stop="sudo systemctl stop btsync@ciwchris"
 alias screencastRecord="$HOME/.bin/video_recording.sh -s"
 alias webcamRecord="$HOME/.bin/video_recording.sh -w"
 alias youtubeConvert="$HOME/.bin/video_recording.sh -y"
