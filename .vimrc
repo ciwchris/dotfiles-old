@@ -190,9 +190,8 @@ set viminfo='100,f0
 
 
 """"""" show chars for tab and end of line
-" causing issues !!!!
-"set list
-"set listchars=tab:▸\ ,eol:¬
+set list
+set listchars=tab:▸\ ,eol:¬
 
 
 """"""" copy working directory of current buffer
