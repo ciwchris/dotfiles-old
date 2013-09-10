@@ -153,7 +153,7 @@ map <leader>cd :cd %:p:h<cr>
 " => Spell checking
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Pressing ,ss will toggle and untoggle spell checking
-map <leader>ss :setlocal spell!<cr>
+map <leader>ss :setlocal spell!<cr>:set wrap<cr>
 
 "Shortcuts using <leader>
 map <leader>sn ]s
