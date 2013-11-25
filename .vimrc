@@ -97,7 +97,7 @@ set cindent
 set autoindent
 set smartindent
 set mouse=a				" use mouse in xterm to scroll
-set scrolloff=5 		" 5 lines bevore and after the current line when scrolling
+set scrolloff=3 		" 3 lines before and after the current line when scrolling
 set ignorecase			" ignore case
 set smartcase			" but don't ignore it, when search string contains uppercase letters
 set hid 				" allow switching buffers, which have unsaved changes
