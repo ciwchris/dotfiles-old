@@ -343,19 +343,24 @@ iabbrev our our<esc>b<leader>heea
 
 " Custom functions {{{
 
-" function! NumberToggle()
-" 	if(&relativenumber == 1)
-" 		set number
-" 	else
-" 		set relativenumber
-" 	endif
-" endfunc
-" nnoremap <C-n> :call NumberToggle()<cr>
-" augroup filetype_vim
-" autocmd FocusLost * :set number
-" autocmd FocusGained * :set relativenumber
-" autocmd InsertEnter * :set nonumber
-" autocmd InsertLeave * :set relativenumber
-" augroup END
+
+" Compatible with ranger 1.4.2 through 1.6.*
+"
+" Add ranger as a file chooser in vim
+"
+" If you add this function and the key binding to the .vimrc, ranger can
+" be started using the keybinding ",r".  Once you select a file by pressing
+" enter, ranger will quit again and vim will open the selected file.
+" https://github.com/hut/ranger/blob/master/doc/examples/vim_file_chooser.vim
+
+fun! RangerChooser()
+	exec "silent !ranger --choosefile=/tmp/chosenfile " . expand("%:p:h")
+	if filereadable('/tmp/chosenfile')
+		exec 'edit ' . system('cat /tmp/chosenfile')
+		call system('rm /tmp/chosenfile')
+	endif
+	redraw!
+endfun
+map ,r :call RangerChooser()<CR>
 
 " }}}
