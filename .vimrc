@@ -135,6 +135,13 @@ augroup filetype_vim
 	autocmd FileType vim setlocal foldmethod=marker
 augroup END
 
+" Map omni complete to control space,
+" which is interperted as an @ sign on the terminal
+inoremap <C-@> <C-x><C-o>
+
+" Quickly use ctags with CtrlP
+nnoremap <leader>. :CtrlPTag<cr>
+
 " Fast saving
 nnoremap <leader>w :w!<cr>
 
@@ -143,6 +150,9 @@ nnoremap <leader>d :bd!<cr>
 
 " Fast edit single file
 nnoremap <leader>on :on<cr>
+
+" Fast switching to previous buffer
+nnoremap <leader>bp :b#<cr>
 
 " Fast editing of the .vimrc
 nnoremap <leader>ev :e! $MYVIMRC<cr>
