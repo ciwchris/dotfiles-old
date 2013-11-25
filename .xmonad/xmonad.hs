@@ -18,6 +18,8 @@ import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
 
 import XMonad.Util.EZConfig
+-- so xdotool can get the active window
+import XMonad.Hooks.EwmhDesktops
 
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
@@ -255,7 +257,8 @@ myStartupHook = return ()
 
 -- Run xmonad with the settings you specify. No need to modify this.
 --
-main = xmonad =<< xmobar defaults
+-- main = xmonad $ ewmh defaults
+main = xmonad =<< xmobar (ewmh defaults)
 
 -- A structure containing your configuration settings, overriding
 -- fields in the default config. Any you don't override, will

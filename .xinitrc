@@ -48,5 +48,10 @@ xautolock -time 30 -locker slimlock  -notify 8 -notifier "zenity --notification 
 # Start f.lux to control screen color, remove blue in the evenings
 xflux -z 99201 &
 
+# Simple X hotkey daemon: for custom key chords
+sxhkd &
+# Turn off repeating of '/' key so it can be used for chording
+xset -r 34
+
 # start Window Manager
 exec xmonad
