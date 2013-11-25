@@ -46,7 +46,7 @@ alias ack="ack -l"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
 # Other plugins to try (archlinux bundler gem lein mvn npm vi-mode last-working-dir)
-plugins=(git git-extras)
+plugins=(git git-extras lein)
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/programs/git/nvm/nvm.sh
@@ -58,6 +58,7 @@ PATH+=":$HOME/.bin"
 export GEM_HOME=$(ruby -rubygems -e "puts Gem.user_dir")
 export VISUAL=vim
 export EDITOR=vim
+export CLOJURESCRIPT_HOME=$HOME/websites/clojurescript
 
 # Use keychain to control ssh-agent and ssh-add across multiple login sessions
 alias ssh='eval $(/usr/bin/keychain --eval --agents ssh -Q --quiet ~/.ssh/id_rsa) && ssh'
