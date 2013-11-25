@@ -90,8 +90,9 @@ set wildmode=list:longest,full	" tab complete to longest string
 set visualbell
 set ttyfast
 
-"set nonumber				" line numbers off
-"set relativenumber
+set number				" line numbers off
+set relativenumber
+
 set cindent
 set autoindent
 set smartindent
