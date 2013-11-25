@@ -14,17 +14,19 @@ Bundle 'gmarik/vundle'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'bling/vim-airline'
 
-Bundle 'https://github.com/Valloric/YouCompleteMe.git'
+"Bundle 'https://github.com/Valloric/YouCompleteMe.git'
 Bundle 'SirVer/ultisnips'
 "Bundle 'tpope/vim-ragtag'
 Bundle 'vim-scripts/bufexplorer.zip'
 Bundle 'kien/ctrlp.vim'
+"Bundle 'ervandew/supertab'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-fugitive'
 
 " Improved JavaScript indentation
 Bundle 'pangloss/vim-javascript'
 Bundle 'vim-scripts/indenthtml.vim'
+Bundle 'scrooloose/syntastic'
 
 " :Ack [options] {pattern} [{directory}]
 Bundle 'https://github.com/mileszs/ack.vim.git'
@@ -37,19 +39,23 @@ Bundle 'vim-scripts/mru.vim'
 "Bundle 'LaTex-Box-Team/LaTex-Box'
 
 "merge/diff tool
-Bundle 'sjl/splice.vim' 
+"Bundle 'sjl/splice.vim' 
 
 " Clojure
 "Bundle 'vim-scripts/VimClojure'
 Bundle 'vim-scripts/paredit.vim'
-Bundle 'kien/rainbow_parentheses.vim'
+"Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'guns/vim-clojure-static'
 Bundle 'tpope/vim-fireplace'
+Bundle 'tpope/vim-classpath'
 "Bundle 'jpalardy/vim-slime'
 
 " CSharp
 Bundle 'tpope/vim-dispatch'
 Bundle 'nosami/Omnisharp'
+
+" Note taking
+"Bundle 'cwoac/nvim'
 
 
 filetype plugin indent on
