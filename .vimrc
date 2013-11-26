@@ -19,6 +19,7 @@ Bundle 'SirVer/ultisnips'
 "Bundle 'tpope/vim-ragtag'
 Bundle 'vim-scripts/bufexplorer.zip'
 Bundle 'kien/ctrlp.vim'
+Bundle 'dbakker/vim-projectroot'
 "Bundle 'ervandew/supertab'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-fugitive'
@@ -106,6 +107,7 @@ set showmatch			" showmatch: Show the matching bracket for the last ')'?
 
 set nowrap				" don't wrap by default
 set completeopt=menu,longest,preview
+set tags+=tags;~		" use tags file up to my home directory
 set confirm
 syn on
 
@@ -133,6 +135,11 @@ autocmd BufEnter,BufRead,BufNewFile,BufFilePost *     execute ":lcd " . expand("
 augroup filetype_vim
 	autocmd!
 	autocmd FileType vim setlocal foldmethod=marker
+augroup END
+
+augroup write_ctags
+	autocmd!
+	autocmd BufWritePost *.clj,*cljs silent! :ProjectRootExe !ctags -R &
 augroup END
 
 " Map omni complete to control space,
