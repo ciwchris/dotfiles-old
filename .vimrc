@@ -49,6 +49,7 @@ Bundle 'vim-scripts/paredit.vim'
 Bundle 'guns/vim-clojure-static'
 Bundle 'tpope/vim-fireplace'
 Bundle 'tpope/vim-classpath'
+Bundle 'guns/vim-slamhound'
 "Bundle 'jpalardy/vim-slime'
 
 " CSharp
