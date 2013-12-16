@@ -14,6 +14,12 @@ fi
 # without this terminals spawned from xmonad will not be utf-8
 export LANG="${LANG:-en_US.UTF-8}"
 
+# set panel location for bspwm
+export PANEL_FIFO="/tmp/panel-fifo"
+export PATH=$PATH:$HOME/.config/panel
+xset +fp /usr/share/fonts/local
+xset fp rehash
+
 # set the cursor
 xsetroot -cursor_name left_ptr
 # set dvorak keyboard layout
@@ -48,10 +54,11 @@ xautolock -time 30 -locker slimlock  -notify 8 -notifier "zenity --notification 
 # Start f.lux to control screen color, remove blue in the evenings
 xflux -z 99201 &
 
-# Simple X hotkey daemon: for custom key chords
+# Simple X hotkey daemon: for custom key chords (also used by bspwm)
 sxhkd &
 # Turn off repeating of '/' key so it can be used for chording
-xset -r 34
+#xset -r 34
 
 # start Window Manager
-exec xmonad
+#exec xmonad
+exec bspwm #2> ~/.bspwm.log
