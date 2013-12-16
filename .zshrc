@@ -22,6 +22,9 @@ alias restart="shutdown -r now"
 alias shutdown="shutdown -P now"
 alias ack="ack -l"
 
+FIREFOX_BIN=/usr/bin/firefox
+PHANTOMJS_BIN=~/.bin/phantomjs
+
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
