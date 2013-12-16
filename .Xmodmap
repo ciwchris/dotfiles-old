@@ -5,5 +5,5 @@ remove Lock = Caps_Lock
 keysym Caps_Lock = Escape
 
 ! Alt_R by default is mapped to Shift Mod1. Change it to Mod3 for xmonad
-remove Mod1 = Alt_R
-add Mod3 = Alt_R
+! remove Mod1 = Alt_R
+! add Mod3 = Alt_R
