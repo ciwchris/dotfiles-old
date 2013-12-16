@@ -139,10 +139,15 @@ augroup filetype_vim
 	autocmd FileType vim setlocal foldmethod=marker
 augroup END
 
-augroup write_ctags
-	autocmd!
-	autocmd BufWritePost *.clj,*cljs silent! :ProjectRootExe !ctags -R &
-augroup END
+" Generate clojure tags when a clojure file is saved
+" Removed, we'll manually regenerate the tag file instead
+" augroup write_ctags
+" 	autocmd!
+" 	autocmd BufWritePost *.clj,*cljs silent! :ProjectRootExe !ctags -R &
+" augroup END
+
+" Manually generate taf file. Ctrl-l to refresh the screen, else its blank
+nnoremap <leader>t :ProjectRootExe !ctags -R &<cr><c-l>
 
 " Map omni complete to control space,
 " which is interperted as an @ sign on the terminal
