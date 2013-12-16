@@ -107,7 +107,8 @@ set showmatch			" showmatch: Show the matching bracket for the last ')'?
 
 set nowrap				" don't wrap by default
 set completeopt=menu,longest,preview
-set tags+=tags;~		" use tags file up to my home directory
+" changing of local directory removed so we don't need this anymore
+"set tags+=tags;~		" use tags file up to my home directory (because we change dir when opening a file)
 set confirm
 syn on
 
@@ -130,7 +131,7 @@ let g:mapleader = ","
 
 
 " change to directory of current file automatically
-autocmd BufEnter,BufRead,BufNewFile,BufFilePost *     execute ":lcd " . expand("%:p:h")
+"autocmd BufEnter,BufRead,BufNewFile,BufFilePost *     execute ":lcd " . expand("%:p:h")
 " turn on folding using markers
 augroup filetype_vim
 	autocmd!
