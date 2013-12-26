@@ -87,7 +87,7 @@ super + space
 # wm independent hotkeys
 #
 
-super + Return
+super + shift + Return
     urxvt
 
 shift + space
