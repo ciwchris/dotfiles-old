@@ -1,8 +1,19 @@
 !XF86AudioRaiseVolume
 !XF86AudioLowerVolume
 
-remove Lock = Caps_Lock
-keysym Caps_Lock = Escape
+! Make caps as control and escape at the same time. Based on super-caps by cmatheson.
+! clear Lock
+! keysym Caps_Lock = Control_L
+! add Control = Control_L
+! add Lock = Caps_Lock
+! keycode 999 = Escape
+
+! ! Map the Menu key to the PrtSc key
+! keycode 107 = Menu"
+
+! add Lock = Caps_Lock
+! keysym Caps_Lock = Escape
+! keysym Caps_Lock = Escape
 
 ! Alt_R by default is mapped to Shift Mod1. Change it to Mod3 for xmonad
 ! remove Mod1 = Alt_R
