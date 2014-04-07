@@ -13,12 +13,16 @@ Bundle 'gmarik/vundle'
 " Theme
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'bling/vim-airline'
+Bundle 'christoomey/vim-tmux-navigator'
 
 "Bundle 'https://github.com/Valloric/YouCompleteMe.git'
 Bundle 'SirVer/ultisnips'
 "Bundle 'tpope/vim-ragtag'
 Bundle 'vim-scripts/bufexplorer.zip'
-Bundle 'kien/ctrlp.vim'
+"Bundle 'kien/ctrlp.vim'
+Bundle 'Shougo/unite.vim'
+Bundle 'Shougo/neomru.vim'
+Bundle 'Shougo/neocomplete.vim'
 Bundle 'dbakker/vim-projectroot'
 "Bundle 'ervandew/supertab'
 Bundle 'tpope/vim-commentary'
@@ -34,7 +38,7 @@ Bundle 'https://github.com/mileszs/ack.vim.git'
 " :TagbarToggle
 "Bundle 'majutsushi/tagbar'
 "Bundle 'msanders/snipmate.vim'
-Bundle 'vim-scripts/mru.vim'
+"Bundle 'vim-scripts/mru.vim'
 
 " Lightweight Toolbox for LaTex
 "Bundle 'LaTex-Box-Team/LaTex-Box'
@@ -78,8 +82,8 @@ autocmd!
 set encoding=utf-8
 set history=1000
 set ruler			" show the cursor position all the time
-"set cmdheight=1 	"The commandbar height
-set showcmd			" display incomplete commands
+set cmdheight=1 	"The commandbar height
+set noshowcmd			" display incomplete commands
 " perl/python regex (comment can't appear on line below)
 nnoremap / /\v
 vnoremap / /\v
@@ -154,7 +158,7 @@ nnoremap <leader>t :ProjectRootExe !ctags -R &<cr><c-l>
 inoremap <C-@> <C-x><C-o>
 
 " Quickly use ctags with CtrlP
-nnoremap <leader>. :CtrlPTag<cr>
+" nnoremap <leader>. :CtrlPTag<cr>
 
 " Fast saving
 nnoremap <leader>w :w!<cr>
@@ -274,13 +278,42 @@ endif
 
 " Plugin mappings {{{
 
+" unite
+nnoremap <leader>f :<C-u>Unite -start-insert file<CR>
+
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+nnoremap <leader>r :<C-u>Unite -start-insert file_rec<CR>
+
+let g:unite_source_history_yank_enable = 1
+nnoremap <leader>y :<C-u>Unite history/yank<CR>
+
+nnoremap <silent> <leader>b :<C-u>Unite buffer<CR>
+
+" neocomplete
+
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+" let g:neocomplete#sources#syntax#min_keyword_length = 3
+
+" <TAB>: completion.
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+
+inoremap <expr><C-l> neocomplete#complete_common_string()
+
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+
 " vim-airline
 set laststatus=2		" always display the status line so vim-airline is always displayed
 
 " Ctrlp
-let g:ctrlp_custom_ignore = {
-			\ 'dir': '\v[\/]node_modules$',
-			\}
+" let g:ctrlp_custom_ignore = {
+" 			\ 'dir': '\v[\/]node_modules$',
+" 			\}
 
 " vim-dispatch
 nnoremap <leader>ur :Dispatch<CR>
@@ -375,6 +408,6 @@ fun! RangerChooser()
 	endif
 	redraw!
 endfun
-map ,r :call RangerChooser()<CR>
+" map ,r :call RangerChooser()<CR>
 
 " }}}
