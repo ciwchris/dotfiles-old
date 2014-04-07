@@ -25,7 +25,8 @@ fi
 [ ! -z "$c" ] && ffmpeg -y -i ${files[0]} -c:a libvorbis -q:a 3 -c:v libvpx -b:v 2000k ${files[0]}.webm
 
 #start screencast
-[ ! -z "$s" ] && ffmpeg -f x11grab -r 30 -video_size 1366x768 -i :0.0 -f alsa -i hw:0,0 -acodec flac -vcodec libx264 ${files[0]}.mkv
+[ ! -z "$s" ] && ffmpeg -f x11grab -r 24 -video_size 1366x768 -i :0.0 -vcodec libx264 ${files[0]}.mkv
+#[ ! -z "$s" ] && ffmpeg -f x11grab -r 30 -video_size 1366x768 -i :0.0 -f alsa -i hw:0,0 -acodec flac -vcodec libx264 ${files[0]}.mkv
 
 #start webcam
 [ ! -z "$w" ] && ffmpeg -f v4l2 -s 1366x768 -i /dev/video0 -f alsa -i hw:0,0 -acodec flac -vcodec libx264 ${files[0]}.mkv
