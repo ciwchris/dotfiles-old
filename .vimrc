@@ -407,6 +407,10 @@ iabbrev our our<esc>b<leader>heea
 " Custom functions {{{
 
 
+nnoremap <leader>ib :!ino build<CR>
+nnoremap <leader>iu :!ino upload<CR>
+
+
 " Compatible with ranger 1.4.2 through 1.6.*
 "
 " Add ranger as a file chooser in vim
