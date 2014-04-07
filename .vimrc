@@ -129,9 +129,9 @@ highlight SpecialKey guifg=#4a4a59
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
-let mapleader = ","
-let maplocalleader = ","
-let g:mapleader = ","
+let mapleader = "\<Space>"
+let maplocalleader = "\<Space>"
+let g:mapleader = "\<Space>"
 
 
 " set default font size (for plugin fontsize)
@@ -208,7 +208,8 @@ nmap <leader>md :%!~/Scripts/Markdown.pl --html4tags <cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 inoremap <a-j> <down>
 inoremap <a-k> <up>
-nnoremap <space> <c-f>
+" Use as leader instead
+" nnoremap <space> <c-f>
 " up and down for screen not file line
 nnoremap j gj
 nnoremap k gk
