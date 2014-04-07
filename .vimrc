@@ -321,6 +321,10 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 
 " vim-airline
 set laststatus=2		" always display the status line so vim-airline is always displayed
+"let g:airline_theme='powerlineish'
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline_section_z=''
 
 " Ctrlp
 " let g:ctrlp_custom_ignore = {
