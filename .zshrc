@@ -15,6 +15,7 @@ alias screencastRecord="$HOME/.bin/video_recording.sh -s"
 alias webcamRecord="$HOME/.bin/video_recording.sh -w"
 alias youtubeConvert="$HOME/.bin/video_recording.sh -y"
 alias webmConvert="$HOME/.bin/video_recording.sh -c"
+alias mount-mp3player="sudo mount -t vfat -o uid=ciwchris,gid=users /dev/sdb1 /mnt/mp3player"
 
 alias monitorOff="sleep 1; xset dpms force off"
 alias lock="xautolock -locknow"
