@@ -58,7 +58,7 @@ Bundle 'guns/vim-slamhound'
 
 " CSharp
 Bundle 'tpope/vim-dispatch'
-Bundle 'nosami/Omnisharp'
+"Bundle 'nosami/Omnisharp'
 
 " Note taking
 "Bundle 'cwoac/nvim'
