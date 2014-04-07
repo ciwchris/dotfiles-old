@@ -109,6 +109,9 @@ set smartcase			" but don't ignore it, when search string contains uppercase let
 set hid 				" allow switching buffers, which have unsaved changes
 set shiftwidth=4		" 4 characters for indenting
 set showmatch			" showmatch: Show the matching bracket for the last ')'?
+set expandtab			" use spaces instead of tabs
+" Insert only one space when joining lines containing sentence terminating punctuation
+set nojoinspaces
 
 set nowrap				" don't wrap by default
 set completeopt=menu,longest,preview
