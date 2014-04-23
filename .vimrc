@@ -301,6 +301,8 @@ nnoremap <leader>y :<C-u>Unite history/yank<CR>
 
 nnoremap <silent> <leader>b :<C-u>Unite buffer<CR>
 
+nnoremap <silent> <leader>mru :<C-u>Unite file_mru<CR>
+
 " neocomplete
 
 " Use neocomplete.
