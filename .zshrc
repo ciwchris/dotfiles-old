@@ -56,13 +56,13 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/programs/git/nvm/nvm.sh
 
 # Customize to your needs...
-PATH+=":$(ruby -rubygems -e "puts Gem.user_dir")/bin"
-PATH+=":$HOME/.bin"
-
 export GEM_HOME=$(ruby -rubygems -e "puts Gem.user_dir")
 export VISUAL=vim
 export EDITOR=vim
 export CLOJURESCRIPT_HOME=$HOME/websites/clojurescript
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk
+
+PATH+=":$(ruby -rubygems -e "puts Gem.user_dir")/bin:$HOME/.bin:$JAVA_HOME/bin"
 
 # Use keychain to control ssh-agent and ssh-add across multiple login sessions
 alias ssh='eval $(/usr/bin/keychain --eval --agents ssh -Q --quiet ~/.ssh/id_rsa) && ssh'
