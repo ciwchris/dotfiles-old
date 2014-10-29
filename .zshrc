@@ -60,9 +60,14 @@ export GEM_HOME=$(ruby -rubygems -e "puts Gem.user_dir")
 export VISUAL=vim
 export EDITOR=vim
 export CLOJURESCRIPT_HOME=$HOME/websites/clojurescript
-export JAVA_HOME=/usr/lib/jvm/java-7-openjdk
+# commented out after package update
+#export JAVA_HOME=/usr/lib/jvm/java-7-openjdk
+export JAVA_HOME=/usr/lib/jvm/java-default-runtime
 
 PATH+=":$(ruby -rubygems -e "puts Gem.user_dir")/bin:$HOME/.bin:$JAVA_HOME/bin"
+
+# Add android directories for cordova
+PATH+=":/opt/android-sdk/platform-tools:/opt/android-sdk/tools"
 
 # Use keychain to control ssh-agent and ssh-add across multiple login sessions
 alias ssh='eval $(/usr/bin/keychain --eval --agents ssh -Q --quiet ~/.ssh/id_rsa) && ssh'
@@ -128,3 +133,6 @@ bindkey -M vicmd '^s' history-incremental-search-backward
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/bin/virtualenvwrapper.sh
 # End
+
+# added by travis gem
+[ -f /home/ciwchris/.travis/travis.sh ] && source /home/ciwchris/.travis/travis.sh
