@@ -71,6 +71,14 @@
 (setq org-agenda-files (list "~/org/work.org"
                              "~/org/home.org"))
 
+;; don't show the cider connection and server buffers
+(setq nrepl-hide-special-buffers t)
+
+;; use eldoc
+(add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
+(add-hook 'lisp-interaction-mode-hook 'turn-on-eldoc-mode)
+(add-hook 'ielm-mode-hook 'turn-on-eldoc-mode)
+
 ;; Clever hack so lambda shows up as λ
 ;; (font-lock-add-keywords
 ;;     'emacs-lisp-mode
