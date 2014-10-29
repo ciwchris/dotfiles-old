@@ -12,8 +12,7 @@ Bundle 'gmarik/vundle'
 
 " Theme
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'bling/vim-airline'
-Bundle 'christoomey/vim-tmux-navigator'
+Bundle 'itchyny/lightline.vim'
 
 "Bundle 'https://github.com/Valloric/YouCompleteMe.git'
 "Bundle 'SirVer/ultisnips'
@@ -50,7 +49,7 @@ Bundle 'https://github.com/mileszs/ack.vim.git'
 
 " Clojure
 "Bundle 'vim-scripts/VimClojure'
-Bundle 'vim-scripts/paredit.vim'
+"Bundle 'vim-scripts/paredit.vim'
 "Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'guns/vim-clojure-static'
 Bundle 'tpope/vim-fireplace'
@@ -323,12 +322,13 @@ autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 
-" vim-airline
-set laststatus=2		" always display the status line so vim-airline is always displayed
-"let g:airline_theme='powerlineish'
-let g:airline_left_sep=''
-let g:airline_right_sep=''
-let g:airline_section_z=''
+" lightline
+set laststatus=2 " always show
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ 'active': { 'left': [['filename','modified']], 'right': [['column']]},
+      \ 'inactive': { 'left': [['filename','modified']], 'right': [['column']]}
+      \ }
 
 " Ctrlp
 " let g:ctrlp_custom_ignore = {
