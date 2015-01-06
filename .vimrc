@@ -14,6 +14,8 @@ Bundle 'gmarik/vundle'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'itchyny/lightline.vim'
 
+" Doesn't seem to work and easier to just create a mapping
+"Bundle 'shime/vim-livedown'
 "Bundle 'https://github.com/Valloric/YouCompleteMe.git'
 "Bundle 'SirVer/ultisnips'
 "Bundle 'tpope/vim-ragtag'
@@ -290,6 +292,12 @@ endif
 " }}}
 
 " Plugin mappings {{{
+
+" livedown
+" Plugin doesn't start so call manually
+
+nnoremap <leader>md :call system("livedown start " . expand('%:p') . " --open --port 1337 &")<CR>
+nnoremap <leader>ms :call system("livedown stop --port 1337 &")<CR>
 
 " unite
 nnoremap <leader>f :<C-u>Unite -start-insert file<CR>
