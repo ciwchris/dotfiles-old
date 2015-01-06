@@ -7,6 +7,9 @@
 ;; turn on evil
 (evil-mode 1) 
 
+;; use projectile globally
+(projectile-global-mode)
+
 ;; style emacs
 (if window-system
     (progn
