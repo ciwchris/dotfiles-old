@@ -16,7 +16,6 @@ alias webcamRecord="$HOME/.bin/video_recording.sh -w"
 alias youtubeConvert="$HOME/.bin/video_recording.sh -y"
 alias webmConvert="$HOME/.bin/video_recording.sh -c"
 alias mount-mp3player="sudo mount -t vfat -o uid=ciwchris,gid=users /dev/sdb1 /mnt/mp3player"
-
 alias monitorOff="sleep 1; xset dpms force off"
 alias lock="xautolock -locknow"
 alias restart="shutdown -r now"
@@ -53,6 +52,8 @@ PHANTOMJS_BIN=~/.bin/phantomjs
 plugins=(git git-extras lein)
 
 source $ZSH/oh-my-zsh.sh
+# Deprecated but being set by oh-my-zsh
+unset GREP_OPTIONS
 source $HOME/programs/git/nvm/nvm.sh
 
 # Customize to your needs...
@@ -71,6 +72,16 @@ PATH+=":/opt/android-sdk/platform-tools:/opt/android-sdk/tools"
 
 # Use keychain to control ssh-agent and ssh-add across multiple login sessions
 alias ssh='eval $(/usr/bin/keychain --eval --agents ssh -Q --quiet ~/.ssh/id_rsa) && ssh'
+
+# Use WordAPI to lookup definitions and synonyms
+source $HOME/.config/wordapi/token.sh
+function def {
+    curl https://www.wordsapi.com/words/$1/definitions?accessToken=$WORDAPI_TOKEN
+}
+function syn {
+    curl https://www.wordsapi.com/words/$1/synonyms?accessToken=$WORDAPI_TOKEN
+}
+
 
 # Create symbolic links to directory location to jump to the location easily
 # http://jeroenjanssens.com/2013/08/16/quickly-navigate-your-filesystem-from-the-command-line.html
