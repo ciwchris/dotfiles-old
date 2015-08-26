@@ -118,6 +118,9 @@ set nojoinspaces
 
 set nowrap				" don't wrap by default
 set completeopt=menu,longest,preview
+" Complete from current buffer, window, buffer, unloaded buffer and dictionary (when spelling is turned on)
+set complete=.,w,b,u,kspell
+set thesaurus+=$HOME/thesaurs/mthesaur.txt
 " changing of local directory removed so we don't need this anymore
 "set tags+=tags;~		" use tags file up to my home directory (because we change dir when opening a file)
 set confirm
