@@ -75,4 +75,6 @@ sxhkd &
 
 # start Window Manager
 #exec xmonad
-exec bspwm #2> ~/.bspwm.log
+#exec bspwm #2> ~/.bspwm.log
+exec i3
+#exec i3 --shmlog-size=26214400
