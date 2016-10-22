@@ -59,9 +59,9 @@ Bundle 'https://github.com/mileszs/ack.vim.git'
 "Bundle 'vim-scripts/paredit.vim'
 "Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'guns/vim-clojure-static'
-Bundle 'tpope/vim-fireplace'
-Bundle 'tpope/vim-classpath'
-Bundle 'guns/vim-slamhound'
+"Bundle 'tpope/vim-fireplace'
+"Bundle 'tpope/vim-classpath'
+"Bundle 'guns/vim-slamhound'
 "Bundle 'jpalardy/vim-slime'
 
 " CSharp
