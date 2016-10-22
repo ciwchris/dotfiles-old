@@ -21,6 +21,14 @@ alias lock="xautolock -locknow"
 alias restart="shutdown -r now"
 alias shutdown="shutdown -P now"
 alias ack="ack -l"
+alias ang-start="git clone --depth 1 https://github.com/ciwchris/angular2-seed.git"
+alias monitor-vga="xrandr --output VGA1 --auto --right-of LVDS1"
+alias monitor-vga-off="xrandr --output VGA1 --off"
+alias monitor-hdmi="xrandr --output HDMI1 --auto --right-of LVDS1"
+alias monitor-hdmi-off="xrandr --output HDMI1 --off"
+# localhost:9510/web
+alias start-remote="/opt/urserver/urserver --daemon"
+alias stop-remote="pkill -f 'urserver --daemon'"
 
 FIREFOX_BIN=/usr/bin/firefox
 PHANTOMJS_BIN=~/.bin/phantomjs
