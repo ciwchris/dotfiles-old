@@ -6,6 +6,7 @@
 .bin/color-mode/current-color-mode
 .bin/phantomjs
 .bin/exercism
+.bin/elm-format
 
 .lein/*
 !.lein/profiles.clj
