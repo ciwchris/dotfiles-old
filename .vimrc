@@ -71,6 +71,9 @@ Bundle 'guns/vim-clojure-static'
 " Note taking
 "Bundle 'cwoac/nvim'
 
+" Elixir
+Bundle 'elixir-lang/vim-elixir'
+
 
 filetype plugin indent on
 
