@@ -31,7 +31,6 @@ alias start-remote="/opt/urserver/urserver --daemon"
 alias stop-remote="pkill -f 'urserver --daemon'"
 
 FIREFOX_BIN=/usr/bin/firefox
-PHANTOMJS_BIN=~/.bin/phantomjs
 
 
 # Set to this to use case-sensitive completion
@@ -80,15 +79,6 @@ PATH+=":/opt/android-sdk/platform-tools:/opt/android-sdk/tools"
 
 # Use keychain to control ssh-agent and ssh-add across multiple login sessions
 alias ssh='eval $(/usr/bin/keychain --eval --agents ssh -Q --quiet ~/.ssh/id_rsa) && ssh'
-
-# Use WordAPI to lookup definitions and synonyms
-source $HOME/.config/wordapi/token.sh
-function def {
-    curl https://www.wordsapi.com/words/$1/definitions?accessToken=$WORDAPI_TOKEN
-}
-function syn {
-    curl https://www.wordsapi.com/words/$1/synonyms?accessToken=$WORDAPI_TOKEN
-}
 
 
 # Create symbolic links to directory location to jump to the location easily
@@ -148,10 +138,3 @@ bindkey -M viins '^s' history-incremental-search-backward
 bindkey -M vicmd '^s' history-incremental-search-backward
 # End Vim in zsh
 
-# Python pip virtual commands setup
-export WORKON_HOME=$HOME/.virtualenvs
-source /usr/bin/virtualenvwrapper.sh
-# End
-
-# added by travis gem
-[ -f /home/ciwchris/.travis/travis.sh ] && source /home/ciwchris/.travis/travis.sh
