@@ -34,4 +34,14 @@ URxvt.keysym.C-Up:     perl:font-size:increase
 URxvt.keysym.C-Down:   perl:font-size:decrease
 URxvt.keysym.C-S-Up:   perl:font-size:incglobal
 URxvt.keysym.C-S-Down: perl:font-size:decglobal
-!!
+
+!! rofi settings
+rofi.modi:                           window,run,ssh
+rofi.font:                           haack 12
+rofi.bw:                             0
+rofi.padding:                        3
+rofi.color-window:                   #002b36,#002b36
+rofi.color-normal:                   #002b36,#657b83,#002b36,#93a1a1,#eee8d5
+! rofi.color-active:                   #fdf6e3,#268bd2,#eee8d5,#268bd2,#fdf6e3
+! rofi.color-window:                   #fdf6e3,#002b36
+! rofi.location:                       0
