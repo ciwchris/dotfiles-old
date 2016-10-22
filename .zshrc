@@ -61,7 +61,9 @@ plugins=(buku git git-extras lein)
 source $ZSH/oh-my-zsh.sh
 # Deprecated but being set by oh-my-zsh
 unset GREP_OPTIONS
-source $HOME/programs/git/nvm/nvm.sh
+
+source /usr/share/nvm/init-nvm.sh
+#source $HOME/programs/git/nvm/nvm.sh
 
 # Customize to your needs...
 export GEM_HOME=$(ruby -rubygems -e "puts Gem.user_dir")
