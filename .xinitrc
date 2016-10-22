@@ -22,6 +22,11 @@ xset fp rehash
 
 # set the cursor
 xsetroot -cursor_name left_ptr
+
+
+# Seems we cannot do this so have to specify keyboard confi here too
+# [[ -f $HOME/.bin/toggle-keyboard.sh ]] && $HOME/.bin/toggle-keyboard.sh
+
 # set dvorak keyboard layout
 setxkbmap -layout dvorak
 
@@ -40,8 +45,13 @@ xmodmap -e "keysym Print = Menu"
 # Make the newly mapped Caps Lock key also be used as an Escape key.
 xcape -e "Control_L=Escape"
 
+#xmodmap -e "clear Mod4"
+#xmodmap -e "keycode 206 = Caps_Lock"
+#xmodmap -e "add Mod4 = Super_L Super_R Super_R"
+
 # map mute and unmute keys
 xbindkeys &
+
 
 # load Xdefaults/Xresources
 # Xdefaults is deprecated and somehow Xresources
@@ -63,7 +73,7 @@ hsetroot -fill $HOME/.config/slim/linux-arch_00391060.png
 xautolock -time 30 -locker slimlock  -notify 8 -notifier "zenity --notification --text 'Locking...' --timeout 1" &
 
 # Start dropbox
-[[ -f $HOME/.dropbox-dist/dropbox ]] && $HOME/.dropbox-dist/dropbox /newerversion &
+# [[ -f $HOME/.dropbox-dist/dropbox ]] && $HOME/.dropbox-dist/dropbox /newerversion &
 
 # Start f.lux to control screen color, remove blue in the evenings
 xflux -z 99201 &
@@ -77,4 +87,4 @@ sxhkd &
 #exec xmonad
 #exec bspwm #2> ~/.bspwm.log
 exec i3
-#exec i3 --shmlog-size=26214400
+#exec i3 -d all >> ~/i3log-$(date +'%F-%k-%M-%S') 2>&1
