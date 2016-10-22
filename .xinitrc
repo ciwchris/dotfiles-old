@@ -83,6 +83,9 @@ sxhkd &
 # Turn off repeating of '/' key so it can be used for chording
 #xset -r 34
 
+# start rofi in daemon mode
+rofi &
+
 # start Window Manager
 #exec xmonad
 #exec bspwm #2> ~/.bspwm.log
