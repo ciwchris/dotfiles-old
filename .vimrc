@@ -25,7 +25,7 @@ Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/neomru.vim'
 Bundle 'Shougo/neocomplete.vim'
 Bundle 'Shougo/neosnippet.vim'
-Bundle 'Shougo/neosnippet-snippets'
+Bundle 'ciwchris/neosnippet-snippets'
 Bundle 'dbakker/vim-projectroot'
 "Bundle 'ervandew/supertab'
 Bundle 'tpope/vim-commentary'
@@ -363,11 +363,15 @@ nnoremap <leader>oc :w!<CR>:OmniSharpFindSyntaxErrors<CR>
 
 
 " Ultinsnips
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+"let g:UltiSnipsExpandTrigger="<c-j>"
+"let g:UltiSnipsJumpForwardTrigger="<c-j>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 "let g:UltiSnipsExpandTrigger="<C-t>"
 "let g:UltiSnipsListSnippets="<C-Enter>"
+
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
 
 " Conque - so we can run vim inside of conque
 let g:ConqueTerm_EscKey = '<C-d>'
