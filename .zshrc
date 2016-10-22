@@ -56,7 +56,7 @@ FIREFOX_BIN=/usr/bin/firefox
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
 # Other plugins to try (archlinux bundler gem lein mvn npm vi-mode last-working-dir)
-plugins=(git git-extras lein)
+plugins=(buku git git-extras lein)
 
 source $ZSH/oh-my-zsh.sh
 # Deprecated but being set by oh-my-zsh
