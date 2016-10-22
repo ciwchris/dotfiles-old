@@ -32,9 +32,14 @@ Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-fugitive'
 
 " Improved JavaScript indentation
-Bundle 'pangloss/vim-javascript'
+" Bundle 'pangloss/vim-javascript'
+Bundle 'jason0x43/vim-js-indent'
 Bundle 'vim-scripts/indenthtml.vim'
 Bundle 'scrooloose/syntastic'
+" TypeScript
+Bundle 'Quramy/tsuquyomi'
+Bundle 'Shougo/vimproc.vim'
+Bundle 'leafgarland/typescript-vim'
 
 " :Ack [options] {pattern} [{directory}]
 Bundle 'https://github.com/mileszs/ack.vim.git'
