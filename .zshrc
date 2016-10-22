@@ -73,6 +73,7 @@ export CLOJURESCRIPT_HOME=$HOME/websites/clojurescript
 # commented out after package update
 #export JAVA_HOME=/usr/lib/jvm/java-7-openjdk
 export JAVA_HOME=/usr/lib/jvm/java-default-runtime
+export ELM_HOME=/usr/local/lib/node_modules/elm/share
 
 PATH+=":$(ruby -rubygems -e "puts Gem.user_dir")/bin:$HOME/.bin:$JAVA_HOME/bin"
 
