@@ -236,6 +236,10 @@ nmap <Leader>P "+P
 vmap <Leader>p "+p 
 vmap <Leader>P "+P
 
+
+" Ignores
+set wildignore+=*.gif,*.png,*.jpg
+
 """"""" Remap omni-completion to CTRL+SPACE
 "inoremap <c-space> <c-x><c-o>
 
@@ -272,6 +276,13 @@ map <leader>v :view %%
 
 " }}}
 
+" Digraphs {{{
+
+" To use: ":set digraph" then: ".<BS>-"
+silent! dig -. 8230 "U+2026=…  HORIZONTAL ELLIPSIS  
+
+" }}}
+"
 " Backups {{{
 
 
