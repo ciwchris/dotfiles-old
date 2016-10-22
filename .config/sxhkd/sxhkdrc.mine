@@ -1,7 +1,0 @@
-shift + space : {j,k}
-  {\
-    xdotool getactivewindow key Down,\
-    xdotool getactivewindow key Up\
-  }
-#super + space
-#  { launcher.sh }
