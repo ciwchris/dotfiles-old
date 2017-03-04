@@ -30,7 +30,8 @@ alias monitor-hdmi-off="xrandr --output HDMI1 --off"
 alias start-remote="/opt/urserver/urserver --daemon"
 alias stop-remote="pkill -f 'urserver --daemon'"
 
-FIREFOX_BIN=/usr/bin/firefox
+export FIREFOX_BIN=/usr/bin/firefox
+export CHROME_BIN=/usr/bin/chromium
 
 
 # Set to this to use case-sensitive completion
