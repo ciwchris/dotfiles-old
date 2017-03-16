@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="blinks"
+ZSH_THEME="theunraveler"
 [[ -f $HOME/.bin/color-mode/current-color-mode ]] && SOLARIZED_THEME=$(<$HOME/.bin/color-mode/current-color-mode)
 
 alias disk-usage="sudo du */ -smx | sort -n"
@@ -109,7 +109,7 @@ compctl -K _completemarks unmark
 
 # Vim in zsh
 # enable vim mode on commmand line
-bindkey -v
+# bindkey -v
 
 # no delay entering normal mode
 # https://coderwall.com/p/h63etq
@@ -119,26 +119,26 @@ KEYTIMEOUT=1
 
 # show vim status
 # http://zshwiki.org/home/examples/zlewidgetsfunction
-function zle-line-init zle-keymap-select {
-	RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
-	RPS2=$RPS1
-	zle reset-prompt
-}
-zle -N zle-line-init
-zle -N zle-keymap-select
+# function zle-line-init zle-keymap-select {
+# 	RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
+# 	RPS2=$RPS1
+# 	zle reset-prompt
+# }
+# zle -N zle-line-init
+# zle -N zle-keymap-select
 
 # add missing vim hotkeys
 # fixes backspace deletion issues
 # http://zshwiki.org/home/zle/vi-mode
-bindkey -a u undo
-bindkey -a '^R' redo
-bindkey '^?' backward-delete-char
-bindkey '^H' backward-delete-char
+# bindkey -a u undo
+# bindkey -a '^R' redo
+# bindkey '^?' backward-delete-char
+# bindkey '^H' backward-delete-char
 
 # history search in vim mode
 # http://zshwiki.org./home/zle/bindkeys
 # why_isn_t_control-r_working_anymore
-bindkey -M viins '^s' history-incremental-search-backward
-bindkey -M vicmd '^s' history-incremental-search-backward
+# bindkey -M viins '^s' history-incremental-search-backward
+# bindkey -M vicmd '^s' history-incremental-search-backward
 # End Vim in zsh
 
