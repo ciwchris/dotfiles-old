@@ -1,6 +1,6 @@
 #!/bin/sh
 
-size=11 # Default font size
+size=12 # Default font size
 
 # Use new font size if one was passed in
 if [[ "$1" =~ ^[0-9]+$ ]]; then
