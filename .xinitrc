@@ -67,10 +67,11 @@ xcompmgr -c &
 hsetroot -fill $HOME/.config/slim/linux-arch_00391060.png
 
 # Start notification service for screen lock notification
-/usr/lib/notification-daemon-1.0/notification-daemon &
+# /usr/lib/notification-daemon-1.0/notification-daemon &
 
 # Setup an autolock
-xautolock -time 30 -locker slimlock  -notify 8 -notifier "zenity --notification --text 'Locking...' --timeout 1" &
+#xautolock -time 30 -locker slimlock  -notify 8 -notifier "zenity --notification --text 'Locking...' --timeout 1" &
+xautolock -time 30 -locker slimlock -detectsleep &
 
 # Start dropbox
 # [[ -f $HOME/.dropbox-dist/dropbox ]] && $HOME/.dropbox-dist/dropbox /newerversion &
